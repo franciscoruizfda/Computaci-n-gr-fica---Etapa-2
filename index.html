@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colección — Obra V</title>
+  <title>Colección — Obra V modificada</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -27,22 +27,50 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 24px;
       padding: 0 3px;
     }
 
     #phase-name {
-      font-family: 'Georgia', serif;
+      font-family: Georgia, serif;
       font-size: 12px;
       letter-spacing: 0.12em;
       color: #888;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     #step-counter {
-      font-family: 'Georgia', serif;
+      font-family: Georgia, serif;
       font-size: 11px;
       letter-spacing: 0.1em;
       color: #4a4a4a;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 940px) {
+      body {
+        justify-content: flex-start;
+        padding-top: 20px;
+      }
+
+      canvas {
+        max-width: 96vw;
+        height: auto !important;
+      }
+
+      #hud {
+        width: 96vw;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      #step-counter {
+        text-align: left;
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -51,11 +79,12 @@
   <div id="canvas-wrap"></div>
 
   <div id="hud">
-    <span id="phase-name">Presiona una tecla para añadir la primera figura</span>
-    <span id="step-counter">R · reiniciar</span>
+    <span id="phase-name">Hacé clic para activar el micrófono</span>
+    <span id="step-counter">Grave cálido · agudo frío · chasquido reinicia · R reiniciar · S guardar · V foco</span>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/addons/p5.sound.min.js"></script>
   <script src="sketch.js"></script>
 </body>
 </html>
