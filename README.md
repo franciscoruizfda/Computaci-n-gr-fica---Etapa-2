@@ -1,1 +1,0 @@
-# Computaci-n-gr-fica---Etapa-2
